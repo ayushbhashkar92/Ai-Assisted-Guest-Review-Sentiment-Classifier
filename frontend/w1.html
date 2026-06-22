@@ -8,10 +8,8 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <h2>Homestay AI</h2>
-
         <ul class="nav-links">
             <li><a href="#" onclick="showPage('home')">Home</a></li>
             <li><a href="#" onclick="showPage('about')">About</a></li>
@@ -20,60 +18,39 @@
         </ul>
     </nav>
 
-    <!-- HOME PAGE -->
     <section id="home" class="page active">
-
         <div class="hero">
             <h1>AI-Powered Homestay Review Analysis</h1>
-
             <p>
                 Automatically analyzes guest reviews, classifies sentiment,
-                identifies feedback themes, and generates management responses
+                ident feedback themes, and generates management responses
                 using AI technology.
             </p>
-
-            <button>Analyze Reviews</button>
+            <div id="hero-action-container"></div>
         </div>
 
         <div class="card-container">
-
             <div class="card">
                 <h3>Sentiment Analysis</h3>
-                <p>
-                    Classifies reviews into Positive, Negative,
-                    and Neutral categories.
-                </p>
+                <p>Classifies reviews into Positive, Negative, and Neutral categories.</p>
             </div>
-
             <div class="card">
                 <h3>Theme Detection</h3>
-                <p>
-                    Detects themes such as cleanliness,
-                    staff behavior, amenities, and pricing.
-                </p>
+                <p>Detects themes such as cleanliness, staff behavior, amenities, and pricing.</p>
             </div>
-
             <div class="card">
                 <h3>AI Response Generator</h3>
-                <p>
-                    Creates professional responses to guest reviews.
-                </p>
+                <p>Creates professional responses to guest reviews.</p>
             </div>
-
             <div class="card">
                 <h3>Analytics Dashboard</h3>
-                <p>
-                    Provides insights and trends from customer feedback.
-                </p>
+                <p>Provides insights and trends from customer feedback.</p>
             </div>
-
         </div>
     </section>
 
-    <!-- ABOUT PAGE -->
     <section id="about" class="page">
         <h1>About</h1>
-
         <p>
             This project uses Artificial Intelligence and Large Language Models
             to analyze homestay reviews, identify customer sentiment,
@@ -81,37 +58,22 @@
         </p>
     </section>
 
-    <!-- DASHBOARD PAGE -->
     <section id="dashboard" class="page">
         <h1>Dashboard</h1>
-
-        <p>
-            View sentiment analysis results, detected themes,
-            review statistics, and AI-generated responses.
-        </p>
+        <p>View sentiment analysis results, detected themes, review statistics, and AI-generated responses.</p>
+        <div id="dashboard-content-area" style="margin-top: 20px;"></div>
     </section>
 
-    <!-- LOGIN PAGE -->
     <section id="login" class="page">
         <h1>Login</h1>
-
-        <p>
-            Sign in to access the review analysis dashboard
-            and customer feedback reports.
-        </p>
+        <p style="margin-bottom: 20px;">Sign in to access the review analysis dashboard and customer feedback reports.</p>
+        <div id="login-form-container"></div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>
-           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi laboriosam
-        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi laboriosam</p>
     </footer>
 
-    <script src="w1.js"></script>
-    <script src="index.js"></script>
-        
-        
-
+    <script type="module" src="w1.js"></script>
 </body>
 </html>
