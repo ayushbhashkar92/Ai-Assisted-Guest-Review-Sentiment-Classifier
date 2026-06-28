@@ -1,0 +1,184 @@
+{
+	"info": {
+		"name": "W4_APICollection_26100276  ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. GET All Reviews",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/reviews",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "5000",
+					"path": ["api", "reviews"]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Success - List All Reviews",
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"body": "[\n  {\n    \"id\": 1,\n    \"guest\": \"Alice M.\",\n    \"sentiment\": \"positive\",\n    \"theme\": \"cleanliness\",\n    \"comment\": \"The room was absolutely spotless! Incredible attention to detail.\"\n  },\n  {\n    \"id\": 2,\n    \"guest\": \"John D.\",\n    \"sentiment\": \"negative\",\n    \"theme\": \"food\",\n    \"comment\": \"Breakfast was cold and took 40 minutes to arrive. Disappointed.\"\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "2. GET Search Reviews by Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/reviews/search?q=spotless",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "5000",
+					"path": ["api", "reviews", "search"],
+					"query": [
+						{
+							"key": "q",
+							"value": "spotless"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Success - Filter Matches",
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"body": "[\n  {\n    \"id\": 1,\n    \"guest\": \"Alice M.\",\n    \"sentiment\": \"positive\",\n    \"theme\": \"cleanliness\",\n    \"comment\": \"The room was absolutely spotless! Incredible attention to detail.\"\n  }\n]"
+				}
+			]
+		},
+		{
+			"name": "3. GET Single Review by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/reviews/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "5000",
+					"path": ["api", "reviews", "1"]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Success - Match Found",
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"body": "{\n  \"id\": 1,\n  \"guest\": \"Alice M.\",\n  \"sentiment\": \"positive\",\n  \"theme\": \"cleanliness\",\n  \"comment\": \"The room was absolutely spotless! Incredible attention to detail.\"\n}"
+				},
+				{
+					"name": "404 Error - Review Not Found",
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"body": "{\n  \"error\": \"Not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "4. POST Create New Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"guest\": \"Elena R.\",\n  \"sentiment\": \"neutral\",\n  \"theme\": \"host behavior\",\n  \"comment\": \"The host was polite but quite hard to reach during check-in.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/reviews",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "5000",
+					"path": ["api", "reviews"]
+				}
+			},
+			"response": [
+				{
+					"name": "201 Created Successfully",
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"body": "{\n  \"id\": 3,\n  \"guest\": \"Elena R.\",\n  \"sentiment\": \"neutral\",\n  \"theme\": \"host behavior\",\n  \"comment\": \"The host was polite but quite hard to reach during check-in.\"\n}"
+				},
+				{
+					"name": "400 Bad Request - Missing Parameter Data",
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"body": "{\n  \"error\": \"Missing fields\"\n}"
+				}
+			]
+		},
+		{
+			"name": "5. PUT Update Existing Review",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"guest\": \"Alice M.\",\n  \"sentiment\": \"positive\",\n  \"theme\": \"cleanliness\",\n  \"comment\": \"The room was incredibly gorgeous and totally clean!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/reviews/1",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "5000",
+					"path": ["api", "reviews", "1"]
+				}
+			},
+			"response": [
+				{
+					"name": "200 Success - Updated Row",
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"body": "{\n  \"id\": 1,\n  \"guest\": \"Alice M.\",\n  \"sentiment\": \"positive\",\n  \"theme\": \"cleanliness\",\n  \"comment\": \"The room was incredibly gorgeous and totally clean!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "6. DELETE Remove Review",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/reviews/2",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "5000",
+					"path": ["api", "reviews", "2"]
+				}
+			},
+			"response": [
+				{
+					"name": "204 No Content - Successful Deletion",
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"body": ""
+				}
+			]
+		}
+	]
+}

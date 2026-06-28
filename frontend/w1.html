@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Homestay Review Analyzer</title>
-    <link rel="stylesheet" href="w1.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <h2>Homestay AI</h2>
         <ul class="nav-links">
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('about')">About</a></li>
-            <li><a href="#" onclick="showPage('dashboard')">Dashboard</a></li>
-            <li><a href="#" onclick="showPage('login')">Login</a></li>
+            <li><a href="#" class="nav-btn active" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#" class="nav-btn" onclick="navigateTo('about')">About</a></li>
+            <li><a href="#" class="nav-btn" onclick="navigateTo('dashboard')">Dashboard</a></li>
+            <li><a href="#" class="nav-btn" onclick="navigateTo('login')">Login</a></li>
         </ul>
     </nav>
 
@@ -23,7 +23,7 @@
             <h1>AI-Powered Homestay Review Analysis</h1>
             <p>
                 Automatically analyzes guest reviews, classifies sentiment,
-                ident feedback themes, and generates management responses
+                identifies feedback themes, and generates management responses
                 using AI technology.
             </p>
             <div id="hero-action-container"></div>
@@ -47,6 +47,9 @@
                 <p>Provides insights and trends from customer feedback.</p>
             </div>
         </div>
+
+        <h2 style="text-align: center; margin-top: 40px;">Live Guest Reviews</h2>
+        <div class="grid"></div>
     </section>
 
     <section id="about" class="page">
@@ -70,10 +73,6 @@
         <div id="login-form-container"></div>
     </section>
 
-    <footer>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi laboriosam</p>
-    </footer>
-
-    <script type="module" src="w1.js"></script>
+   <script type="module" src="script.js"></script>
 </body>
 </html>
